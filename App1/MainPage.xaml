@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <CollectionViewSource x:Name="listaLivros"></CollectionViewSource>
+        <Style x:Key="LayoutGridStyle" TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Assets/book.jpg" Opacity="0.4"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="LivroTemplate">
+            <Grid Width="180" Height="180" Margin="0 5">
+                <Image Source="{Binding Capas[0]}" VerticalAlignment="Top" Height="130" />
+                <StackPanel Orientation="Vertical" Height="50" VerticalAlignment="Bottom">
+                    <TextBlock FontSize="18" FontWeight="Bold" Text="{Binding Titulo}" Margin="10,3,0,0" Width="120" Height="20" 
+                       TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"/>
+                    <TextBlock FontSize="15" FontWeight="Thin" Text="{Binding Autores[0]}" Margin="10,0,0,10" Width="120" Height="20" 
+                       TextTrimming="CharacterEllipsis" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid x:Name="LayoutRoot"  Style="{StaticResource LayoutGridStyle}">
+        <GridView ItemsSource="{Binding Source={StaticResource listaLivros}}"  ItemTemplate="{StaticResource LivroTemplate}">
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="3"/>
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+</Page>

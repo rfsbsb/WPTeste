@@ -37,9 +37,11 @@ namespace App1
         }
 
         private async void ObterDados() {
-          BaseVM basevm = new BaseVM();
-          await basevm.GetListaLivros();
-          this.listaLivros.Source = basevm.listaLivros;
+          if (this.listaLivros.Source == null) {
+            BaseVM basevm = new BaseVM();
+            await basevm.GetListaLivros();
+            this.listaLivros.Source = basevm.listaLivros;
+          }
         }
 
         private void AppBarButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) {

@@ -10,5 +10,6 @@ namespace App1.Model {
     public string Titulo { get; set; }
     public List<String> Capas { get; set; }
     public List<String> Autores { get; set; }
+    public string Resenha { get; set; }
   }
 }

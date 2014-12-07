@@ -1,4 +1,6 @@
-﻿using App1.ViewModel;
+﻿using App1.Model;
+using App1.ViewModel;
+using System.Diagnostics;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -38,6 +40,16 @@ namespace App1
           BaseVM basevm = new BaseVM();
           await basevm.GetListaLivros();
           this.listaLivros.Source = basevm.listaLivros;
+        }
+
+        private void AppBarButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e) {
+          Frame.Navigate(typeof(Pesquisar));
+
+        }
+
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e) {
+          Livro livro = ((Livro)e.ClickedItem);
+          Frame.Navigate(typeof(ExibeLivro), livro.Codigo);
         }
     }
 }

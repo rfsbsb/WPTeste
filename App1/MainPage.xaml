@@ -29,13 +29,30 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
+
     <Grid x:Name="LayoutRoot"  Style="{StaticResource LayoutGridStyle}">
-        <GridView ItemsSource="{Binding Source={StaticResource listaLivros}}"  ItemTemplate="{StaticResource LivroTemplate}">
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,19">
+            <TextBlock Text="TOU LENDO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+        </StackPanel>
+
+
+        <GridView IsItemClickEnabled="True" ItemsSource="{Binding Source={StaticResource listaLivros}}" ItemClick="GridView_ItemClick" ItemTemplate="{StaticResource LivroTemplate}" Margin="0,45,0,0">
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="3"/>
                 </ItemsPanelTemplate>
             </GridView.ItemsPanel>
         </GridView>
+
     </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar Background="Black" Opacity="0.4">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Click="AppBarButton_Click" Icon="Find" Label="Pesquisar"></AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

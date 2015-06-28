@@ -35,7 +35,7 @@
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,19">
-            <TextBlock Text="TOU LENDO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock x:Uid="appName" Text="TOU LENDO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
         </StackPanel>
 
 
@@ -52,7 +52,8 @@
     <Page.BottomAppBar>
         <CommandBar Background="Black" Opacity="0.4">
             <CommandBar.PrimaryCommands>
-                <AppBarButton Click="AppBarButton_Click" Icon="Find" Label="Pesquisar"></AppBarButton>
+                <AppBarButton Click="AppBarButton_Click" Icon="Find" x:Uid="searchButton" Label="Pesquisar"></AppBarButton>
+                <AppBarButton Click="AppBarButton_Config_Click" Icon="Setting" x:Uid="settingsButton" Label="Settings"></AppBarButton>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>

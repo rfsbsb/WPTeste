@@ -28,8 +28,8 @@
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock Text="TOU LENDO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
-            <TextBox KeyUp="CaixaPesquisa_KeyUp" PlaceholderText="pesquisar" x:Name="CaixaPesquisa" Margin="0,0,12,0" ></TextBox>
+            <TextBlock Text="TOU LENDO" x:Uid="appName" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBox KeyUp="CaixaPesquisa_KeyUp" x:Uid="searchPlaceholder" PlaceholderText="pesquisar" x:Name="CaixaPesquisa" Margin="0,0,12,0" ></TextBox>
         </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->

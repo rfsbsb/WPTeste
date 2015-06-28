@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="App1.Configuracoes"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    NavigationCacheMode="Enabled"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="TOU LENDO" x:Uid="appName" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,12"/>
+            <TextBlock x:Uid="numItemsPlaceholder" Text="Escolha quantos livros exibir na home" Margin="0,12,0,5"></TextBlock>
+            <ComboBox x:Name="ItensAleatorios" Margin="0,0,12,0" >
+                <ComboBoxItem Content="1"></ComboBoxItem>
+                <ComboBoxItem Content="2"></ComboBoxItem>
+                <ComboBoxItem Content="3"></ComboBoxItem>
+                <ComboBoxItem Content="4"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar Background="Black" Opacity="0.4">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Click="AppBarButton_SaveSetting_Click" Icon="Save" x:Uid="saveButton" Label="Salvar"></AppBarButton>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

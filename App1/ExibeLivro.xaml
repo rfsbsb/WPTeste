@@ -29,7 +29,7 @@
 
         <!-- Title Panel -->
         <StackPanel Grid.Row="0" Margin="19,0,0,0">
-            <TextBlock Text="TOU LENDO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />
+            <TextBlock x:Uid="appName" Text="TOU LENDO" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0" />
             <TextBlock  Text="{Binding Titulo}" Margin="0,6.5,0,26.5" FontSize="32" TextWrapping="Wrap"/>
             <TextBlock  Text="{Binding Autores[0]}" TextAlignment="Center" Margin="0,6.5,0,6.5" FontSize="16" />
         </StackPanel>

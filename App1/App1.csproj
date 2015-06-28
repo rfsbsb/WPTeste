@@ -87,6 +87,9 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\RichTextBlockProperties.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="Configuracoes.xaml.cs">
+      <DependentUpon>Configuracoes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExibeLivro.xaml.cs">
       <DependentUpon>ExibeLivro.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Configuracoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ExibeLivro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,12 +142,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <PRIResource Include="Strings\pt-BR\Resources.resw" />
+    <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.VCLibs, version=12.0">
+      <Name>Microsoft Visual C++ 2013 Runtime Package for Windows Phone</Name>
+    </SDKReference>
+  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>

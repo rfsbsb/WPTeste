@@ -37,5 +37,13 @@ namespace App1.ViewModel {
         this.livro = resultArray[0].ToObject<Livro>();
       }
 
+      public async Task GetListaLivrosAleatorios()
+      {
+          var client = new HttpClient();
+          var uri = new Uri("http://services.toulendo.com.br/s/random?items={0}");
+          var response = await client.GetStringAsync(uri);
+          JArray resultArray = JArray.Parse(response);
+          this.listaLivros = resultArray.ToObject<List<Livro>>();
+      }
     }
 }

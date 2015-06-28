@@ -123,6 +123,9 @@
   <data name="appNameProp" xml:space="preserve">
     <value>Tou Lendo</value>
   </data>
+  <data name="numItemsPlaceholder.Text" xml:space="preserve">
+    <value>Escolha quantos livros exibir nos tiles</value>
+  </data>
   <data name="searchButton.Label" xml:space="preserve">
     <value>Pesquisar</value>
   </data>
